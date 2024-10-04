@@ -1,0 +1,195 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Employee Attendance System</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    background-color: #f5f5f5;
+                    color: #333;
+                }
+        
+                /* Custom Navbar Styles */
+                .navbar-custom {
+                    background: linear-gradient(90deg, #004d99, #00264d); /* Gradient background */
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+                }
+        
+                .navbar-custom .navbar-brand {
+                    color: #ffffff; /* White text */
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    font-size: 35px;
+                    transition: color 0.3s ease-in-out;
+                }
+        
+                .navbar-custom .navbar-brand:hover {
+                    color: #66ccff; /* Lighter blue on hover */
+                }
+        
+                .navbar-custom .nav-link {
+                    color: #ffffff; /* White text */
+                    font-size: 20px;
+                    transition: color 0.3s ease-in-out;
+                }
+        
+                .navbar-custom .nav-link:hover {
+                    color: #66ccff; /* Light blue on hover */
+                }
+        
+                .btn-link {
+                    color: #ffffff;
+                    font-size: 20px;
+                    padding: 0;
+                    transition: color 0.3s ease-in-out;
+                }
+        
+                .btn-link:hover {
+                    color: #66ccff;
+                    text-decoration: none;
+                }
+        
+                .navbar-toggler-icon {
+                    filter: invert(100%);
+                }
+        
+                /* Hero Section */
+                .hero-section {
+                    background: linear-gradient(90deg, rgba(0, 77, 153, 0.8), rgba(0, 38, 77, 0.8)), url('https://source.unsplash.com/1600x900/?technology,office');
+                    background-size: cover;
+                    background-position: center;
+                    color: white;
+                    padding: 100px 0;
+                    text-align: center;
+                }
+        
+                .hero-section h1 {
+                    font-size: 48px;
+                    font-weight: bold;
+                }
+        
+                .hero-section p {
+                    font-size: 22px;
+                    margin-top: 20px;
+                }
+        
+                .btn-primary {
+                    background-color: #66ccff;
+                    border-color: #66ccff;
+                    font-size: 20px;
+                    padding: 12px 30px;
+                    margin-top: 30px;
+                }
+        
+                /* Features Section */
+                .features-section {
+                    padding: 80px 0;
+                    background-color: white;
+                }
+        
+                .feature-card {
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    padding: 30px;
+                    border-radius: 10px;
+                    transition: transform 0.3s ease-in-out;
+                }
+        
+                .feature-card:hover {
+                    transform: translateY(-10px);
+                }
+        
+                .features-section h2 {
+                    text-align: center;
+                    font-size: 36px;
+                    margin-bottom: 60px;
+                }
+        
+                .feature-card h5 {
+                    font-size: 24px;
+                    margin-top: 20px;
+                }
+        
+                .feature-card p {
+                    font-size: 18px;
+                    color: #666;
+                }
+        
+                /* Footer Section */
+                .footer {
+                    background-color: #004d99;
+                    color: white;
+                    padding: 40px 0;
+                    text-align: center;
+                }
+        
+                .footer p {
+                    margin: 0;
+                    font-size: 18px;
+                }
+            </style>
+        </head>
+        
+        <body>
+        
+            <!-- Custom Navbar Section -->
+            {% extends 'base.html' %}
+                {% block content %}
+        
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="container">
+                    <h1>Welcome to the Employee Attendance System</h1>
+                    <p>Efficient, secure, and reliable attendance tracking system for modern workplaces and educational institutions.</p>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+            </section>
+        
+            <!-- Features Section -->
+            <section class="features-section" id="features">
+                <div class="container">
+                    <h2>Our Features</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="feature-card text-center">
+                                <img src="https://plus.unsplash.com/premium_photo-1700830452915-434970100217?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGZhY2UlMjByZWNvZ25pdGlvbnxlbnwwfHwwfHx8MA%3D%3D" alt="Security" class="img-fluid rounded">
+                                <h5>Real-time Monitoring</h5>
+                                <p>Track attendance in real-time with live dashboards and instant reporting features.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card text-center">
+                                <img src="https://plus.unsplash.com/premium_vector-1682310585565-9e4fe541c886?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXR0ZW5kYW5jZXxlbnwwfHwwfHx8MA%3D%3D" alt="Cloud" class="img-fluid rounded">
+                                <h5>Cloud-based Access</h5>
+                                <p>Access your attendance data from anywhere, anytime with secure cloud storage.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card text-center">
+                                <img src="https://plus.unsplash.com/premium_photo-1661315406324-329dd27ebc34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmVwb3J0fGVufDB8fDB8fHww" alt="Automation" class="img-fluid rounded">
+                                <h5>Automated Reports</h5>
+                                <p>Generate detailed attendance reports automatically and share them with your team.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Footer Section -->
+            <footer class="footer">
+                <div class="container">
+                    <p>&copy; 2024 Employee Attendance System | All Rights Reserved.</p>
+                    <a style="color: #ffffff;" href="https://www.biplapneupane.com.np">Made by Biplap Neupane❤️❤️.</a>
+                </div>
+            </footer>
+            <!-- Bootstrap JS and jQuery -->
+           
+       
+        
+    {% endblock %}
+
+
+    

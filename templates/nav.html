@@ -1,0 +1,229 @@
+<!-- <style>
+    .navbar-custom {
+        background-color: transparent;
+    }
+
+    .navbar-custom .navbar-brand {
+        color: #fff; /* Set the text color to white */
+    }
+
+    .navbar-custom .nav-link {
+        color: #fff; /* Set the text color to white */
+    }
+
+    .navbar-custom .nav-link:hover {
+        color: #f8f9fa; /* Set the text color to a slightly lighter shade of white on hover */
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    {% if user.is_authenticated %}
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}"
+            style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 35px;">Smart Attendance
+            System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_superuser %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}" style="font-size: 20px;">Admin Profile</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}" style="font-size: 20px;">Staff Profile</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}" style="font-size: 20px;">Logout</a>
+                </li>
+            </ul>
+            {% else %}
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}" style="font-size: 20px;">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}" style="font-size: 20px;">Login</a>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</nav> -->
+
+<!-- 
+<style>
+    .navbar-custom {
+        background-color: transparent;
+    }
+
+    .navbar-custom .navbar-brand {
+        color: #fff; /* Set the text color to white */
+    }
+
+    .navbar-custom .nav-link {
+        color: #fff; /* Set the text color to white */
+    }
+
+    .navbar-custom .nav-link:hover {
+        color: #f8f9fa; /* Set the text color to a slightly lighter shade of white on hover */
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    {% if user.is_authenticated %}
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}"
+            style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 35px;">Smart Attendance
+            System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_superuser %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}" style="font-size: 20px;">Admin Profile</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}" style="font-size: 20px;">Staff Profile</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <form method="POST" action="{% url 'logout' %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-link nav-link" style="font-size: 20px; ">
+                            Logout
+                        </button>
+                    </form>
+                </li>
+            </ul>
+            {% else %}
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}" style="font-size: 20px;">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}" style="font-size: 20px;">Login</a>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+ -->
+
+ <style>
+    .navbar-custom {
+        background: linear-gradient(90deg, #004d99, #00264d); /* Gradient background */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    }
+
+    .navbar-custom .navbar-brand {
+        color: #ffffff; /* White text */
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 35px;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .navbar-custom .navbar-brand:hover {
+        color: #66ccff; /* Lighter blue on hover */
+    }
+
+    .navbar-custom .nav-link {
+        color: #ffffff; /* White text */
+        font-size: 20px;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .navbar-custom .nav-link:hover {
+        color: #66ccff; /* Light blue on hover */
+    }
+
+    .btn-link {
+        color: #ffffff;
+        font-size: 20px;
+        padding: 0;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .btn-link:hover {
+        color: #66ccff;
+        text-decoration: none;
+    }
+
+    .navbar-toggler-icon {
+        filter: invert(100%);
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    {% if user.is_authenticated %}
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            Employee Attendance System
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <!-- Add links or keep empty for future -->
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_superuser %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}">Admin Profile</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}">Staff Profile</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <form method="POST" action="{% url 'logout' %}" style="margin-top: 5px;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-link nav-link">
+                            Logout
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% else %}
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            Employee Attendance System
+        </a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+        </ul>
+    </div>
+    {% endif %}
+</nav>

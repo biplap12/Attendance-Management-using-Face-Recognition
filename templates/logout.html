@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} Logout Page {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg p-4 text-center">
+                    <h3 class="mb-4">You have been logged out</h3>
+                    <p>Thank you for using our service. We hope to see you again soon!</p>
+                    <hr>
+                    <a href="{% url 'home' %}" class="btn btn-info btn-lg btn-block mt-3">Return to Home</a>
+                    <a href="{% url 'login' %}" class="btn btn-outline-info btn-lg btn-block mt-3">Log in Again</a>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}
+
