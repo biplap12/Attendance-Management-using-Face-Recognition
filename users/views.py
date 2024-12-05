@@ -89,8 +89,6 @@ def staff_attendance_percentage_this_week(staff):
     
     qs1 = qs2.filter(present=True)
     return round((len(qs1) / total_days) * 100, 2)
-
-
 def staff_attendance_percentage_this_month(staff):
     first_day = date.today().replace(day=1)
     current_year = date.today().year
@@ -105,3 +103,4 @@ def staff_attendance_percentage_this_month(staff):
     
     qs1 = qs2.filter(present=True)
     return round((len(qs1) / total_days) * 100, 2)
+
