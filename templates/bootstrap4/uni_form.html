@@ -2,7 +2,6 @@
 <form method="POST" novalidate>
     {% csrf_token %}
     {% if form_show_errors %}
-        <div class="alert alert-danger">{{ form.non_field_errors }}</div>
     {% endif %}
     {% for field in form %}
         <div class="form-group">
@@ -14,5 +13,7 @@
             {% endfor %}
         </div>
     {% endfor %}
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary w-50 rounded center justify-content-center py-2 shadow-sm mt-3 ">Submit</button>
+    </div>
 </form>

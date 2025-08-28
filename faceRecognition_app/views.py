@@ -350,8 +350,6 @@ def train_data(request):
         qs.is_trained = True
         qs.save(update_fields=['is_trained'])
         return redirect('index')
-
-
 def getImagesAndLabels(path, face_cascade):
     faceSamples = []
     Ids = []
@@ -371,7 +369,6 @@ def getImagesAndLabels(path, face_cascade):
     print(Ids)
     return faceSamples, Ids
 
-
 @login_required
 def delete_photo(request):
     training_dir='faceRecognition_data/training_dataset'
@@ -387,7 +384,6 @@ def delete_photo(request):
             qs.save(update_fields=['is_sampleUploaded','sample','is_trained'])
             messages.success(request,"Sample has been deleted")
             return redirect('index')
-            
         else:
             qs.is_sampleUploaded=False
             qs.is_trained=False
@@ -396,7 +392,6 @@ def delete_photo(request):
             
             messages.warning(request,"Sample has already been deleted")
             return redirect('index')
-        
     else:
         messages.warning(request,'Sample photo not uploaded yet')
         return redirect('index')

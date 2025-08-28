@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ChatBot</title>
+</head>
+<body>
+<h2>Chat with Bot</h2>
+<div id="chat-box"></div>
+<input type="text" id="user-input" placeholder="Type message..."/>
+<button onclick="sendMessage()">Send</button>
+
+<script>
+function sendMessage() {
+    const input = document.getElementById("user-input");
+    const message = input.value;
+    if(!message) return;
+
+    const chatBox = document.getElementById("chat-box");
+    chatBox.innerHTML += "<div><b>You:</b> " + message + "</div>";
+
+    fetch(`/chatbot/chat/?message=${message}`)
+        .then(response => response.json())
+        .then(data => {
+            chatBox.innerHTML += "<div><b>Bot:</b> " + data.reply + "</div>";
+            chatBox.scrollTop = chatBox.scrollHeight;
+        });
+    input.value = "";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.git
+.venv
+.vscode
+assert
+env
+faceRecognition_app
+faceRecognition_data
+faceRecognition_project
+media
+model
+static
+templates
+users
+venvaa
